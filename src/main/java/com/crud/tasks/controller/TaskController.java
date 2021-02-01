@@ -38,7 +38,7 @@ public class TaskController {
     @RequestMapping(method = RequestMethod.DELETE, value = "deleteTasks")
     public void deleteTask(@RequestParam Long taskId) throws IllegalArgumentException {
         Task taskToDelete = service.getTask(taskId).orElseThrow(IllegalArgumentException::new);
-            service.deleteTask(taskToDelete);
+            service.deleteTask(taskId);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "updateTask")
