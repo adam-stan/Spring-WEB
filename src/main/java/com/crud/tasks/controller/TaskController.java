@@ -37,12 +37,12 @@ public class TaskController {
 
     @RequestMapping(method = RequestMethod.DELETE, value = "deleteTasks")
     public void deleteTask(@RequestParam Long taskId) throws IllegalArgumentException {
-        Task taskToDelete = service.getTask(taskId).orElseThrow(IllegalArgumentException::new);
-            service.deleteTask(taskId);
+        service.getTask(taskId).orElseThrow(IllegalArgumentException::new);
+        service.deleteTask(taskId);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "updateTask")
-    public TaskDto updateTask(TaskDto taskDto) {
+    public TaskDto updateTask(@RequestBody TaskDto taskDto) {
         Task task = taskMapper.mapToTask(taskDto);
         Task savedTask = service.saveTask(task);
         return taskMapper.mapToTaskDto(savedTask);
