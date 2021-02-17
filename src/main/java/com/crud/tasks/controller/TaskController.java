@@ -36,7 +36,7 @@ public class TaskController {
                 (service.getTask(taskId).orElseThrow(TaskNotFoundException::new));
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "deleteTasks")
+    @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask")
     public void deleteTask(@RequestParam Long taskId) throws IllegalArgumentException {
         service.getTask(taskId).orElseThrow(IllegalArgumentException::new);
         service.deleteTask(taskId);
