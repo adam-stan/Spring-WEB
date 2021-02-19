@@ -61,7 +61,7 @@ public class TrelloClient {
                 .build()
                 .encode()
                 .toUri();
-
+        System.out.println(url);
         return restTemplate.postForObject(url, null, CreatedTrelloCard.class);
     }
 }
