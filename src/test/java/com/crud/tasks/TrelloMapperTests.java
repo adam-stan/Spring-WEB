@@ -64,7 +64,6 @@ public class TrelloMapperTests {
 
         //Then
         assertEquals(1, trelloBoardList.size());
-
     }
 
     @Test

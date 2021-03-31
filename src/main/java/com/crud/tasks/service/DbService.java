@@ -2,6 +2,7 @@ package com.crud.tasks.service;
 
 import com.crud.tasks.domain.Task;
 import com.crud.tasks.repository.TaskRepository;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
