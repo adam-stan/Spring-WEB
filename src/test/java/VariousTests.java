@@ -5,8 +5,6 @@ import com.crud.tasks.domain.TrelloList;
 import com.crud.tasks.mapper.TaskMapper;
 import com.crud.tasks.trello.validator.TrelloValidator;
 import org.junit.jupiter.api.Test;
-
-
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -36,10 +34,10 @@ public class VariousTests {
     void taskMapperTest() {
 
         //Given
-        Task task = new Task(Long.valueOf(1), "title1", "content1");
-        TaskDto taskDto = new TaskDto(Long.valueOf(2), "title2", "content2");
+        Task task = new Task(1L, "title1", "content1");
+        TaskDto taskDto = new TaskDto(2L, "title2", "content2");
         TaskMapper taskMapper = new TaskMapper();
-        List<Task> taskList = List.of(new Task(Long.valueOf(3), "title3", "content3"));
+        List<Task> taskList = List.of(new Task(3L, "title3", "content3"));
 
         //When
         TaskDto newTaskDto = taskMapper.mapToTaskDto(task);
